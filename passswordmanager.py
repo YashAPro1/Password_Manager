@@ -18,7 +18,7 @@ fr = Fernet(key)
 
 def view():
 	with open('passwords.txt',"r") as f:
-		for lime in f.readlines():
+		for line in f.readlines():
 			d = line.rstrip()
 			user,pd = d.split("|")
 			print("User: ",user,", Password: ",fr.decrypt(pd.encode()).decode())
